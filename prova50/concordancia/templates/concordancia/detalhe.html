@@ -1,0 +1,34 @@
+{% extends 'concordancia/base.html' %}
+
+{% block conteudo %}
+    <div class="detalhe-container">
+        <h2>Detalhe do Mapeamento</h2>
+        
+        <h3>Frase: "{{ mapa.frase_exemplo }}"</h3>
+        
+        <div class="detalhe-grid">
+            <div class="card-detalhe">
+                <h4>Núcleo (Regente)</h4>
+                <p><strong>Termo:</strong> {{ mapa.nucleo.termo }}</p>
+                <p><strong>Gênero:</strong> {{ mapa.nucleo.genero }}</p>
+                <p><strong>Número:</strong> {{ mapa.nucleo.numero }}</p>
+                <p><strong>Pessoa:</strong> {{ mapa.nucleo.pessoa }}</p>
+            </div>
+            
+            <div class="card-detalhe">
+                <h4>Elemento (Flexionado)</h4>
+                <p><strong>Termo:</strong> {{ mapa.elemento.termo }}</p>
+                <p><strong>Gênero:</strong> {{ mapa.elemento.genero }}</p>
+                <p><strong>Número:</strong> {{ mapa.elemento.numero }}</p>
+                <p><strong>Pessoa:</strong> {{ mapa.elemento.pessoa }}</p>
+            </div>
+        </div>
+
+        <h4>Regra Aplicada</h4>
+        <p><strong>Tipo:</strong> {{ mapa.regra.tipo }}</p>
+        <p><strong>Descrição:</strong> {{ mapa.regra.descricao }}</p>
+        
+        <br>
+        <a href="{% url 'lista' %}">Voltar para a lista</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'concordancia/base.html' %} {% block conteudo %}
+    <h2>Exemplos de Concordância</h2>
+    <div class="lista-container">
+        {% for mapa in lista_de_mapas %}
+            <div class="card-mapa">
+                <h3>"{{ mapa.frase_exemplo }}"</h3>
+                <p>
+                    <strong>Núcleo:</strong> {{ mapa.nucleo.termo }}
+                    (<i>{{ mapa.nucleo.numero }}, {{ mapa.nucleo.pessoa }}</i>)
+                </p>
+                <p>
+                    <strong>Elemento:</strong> {{ mapa.elemento.termo }}
+                    (<i>{{ mapa.elemento.numero }}, {{ mapa.elemento.pessoa }}</i>)
+                </p>
+                <p><strong>Regra:</strong> {{ mapa.regra.descricao }}</p>
+                
+                <a href="{% url 'detalhe' mapa.pk %}" class="btn-detalhe">
+                    Ver Detalhes
+                </a>
+            </div>
+        {% empty %}
+            <p>Nenhum mapeamento encontrado. Adicione alguns no /admin/.</p>
+        {% endfor %}
+    </div>
+{% endblock %}

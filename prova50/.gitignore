@@ -1,0 +1,48 @@
+# Byte-code files
+*.pyc
+__pycache__/
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Database files
+*.sqlite3
+*.db
+*.db-journal
+
+# Media and static files (if served locally)
+media/
+static/
+
+# IDE-specific files
+.idea/
+.vscode/
+*.swp
+*.bak
+*.swo
+
+# Log files
+*.log
+
+# Environment variables
+.env
+.env.local
+
+# Django-specific files
+celerybeat-schedule
+celeryd-log
+debug.log
+error.log
+local_settings.py  # If you use a separate file for local settings
+migrations/  # If you want to ignore all migration files in all apps
+
+# PyInstaller (if used)
+build/
+dist/
+*.spec
+
+# Other common files
+.DS_Store
+Thumbs.db
